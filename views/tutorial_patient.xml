@@ -60,9 +60,6 @@
                             <field name="contact"/>
                         </group>
                     </group>
-                    <group>
-                        <field name="note"/>
-                    </group>
                     <notebook>
                         <page string="Contact Information Address">
                             <group>
@@ -77,6 +74,9 @@
                                            options='{"no_open": True, "no_create": True}'/>
                                 </div>
                             </group>
+                        </page>
+                        <page string="Description">
+                            <field name="note"/>
                         </page>
                     </notebook>
                 </sheet>
