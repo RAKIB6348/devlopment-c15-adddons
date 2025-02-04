@@ -19,6 +19,7 @@
         'views/menu.xml',
         'views/tutorial_patient.xml',
         'views/tutorial_appointment.xml',
+        'views/tutorial_doctor.xml',
 
     ],
     'installable' : True,

@@ -16,4 +16,9 @@
               parent="tutorial_root_menu"
               sequence="1"/>
 
+    <menuitem id="tutorial_doctor_root"
+              name="DOCTOR CARD"
+              parent="tutorial_root_menu"
+              sequence="2"/>
+
 </odoo>

@@ -2,8 +2,9 @@ from odoo import api, fields, models
 
 
 class HospitalDoctor(models.Model):
-    _name = 'hospital.doctor'
+    _name = 'patient.doctor'
     _description = 'Doctor Record'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     image = fields.Binary(string='Image')
     name = fields.Char(string='Name')
