@@ -28,3 +28,11 @@ class HospitalAppointment(models.Model):
     appointment_date = fields.Date(string='Appointment Date')
     booking_date = fields.Date(string='booking_date Date')
     contact = fields.Char(string='Contact')
+
+    # address information
+    street = fields.Char('Street')
+    street2 = fields.Char('Street2')
+    zip = fields.Char('Zip')
+    city = fields.Char('City')
+    state_id = fields.Many2one("res.country.state", string='State')
+    country_id = fields.Many2one('res.country', string='Country')
