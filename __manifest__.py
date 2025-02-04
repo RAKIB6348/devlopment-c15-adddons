@@ -12,6 +12,7 @@
 
         # views
         'views/menu.xml',
+        'views/tutorial_patient.xml',
 
     ],
     'installable' : True,
