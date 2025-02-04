@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <menuitem id="tutorial_root_menu"
+              name="Tutorials"
+              seuence="2"/>
+
+    <menuitem id="tutorial_patient_root"
+              name="Patient Card"
+              parent="tutorial_root_menu"
+              seuence="0"/>
+
+</odoo>

@@ -8,7 +8,11 @@
     'data' : [
         # security
         'security/ir.model.access.csv',
-        
+
+
+        # views
+        'views/menu.xml',
+
     ],
     'installable' : True,
     'application' : True,
