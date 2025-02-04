@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <record id="tutorial_patient_search_view" model="ir.ui.view">
+        <field name="name">patient.patient.search</field>
+        <field name="model">patient.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Patient Name"/>
+                <field name="contact" string="Patient Contact"/>
+            </search>
+        </field>
+    </record>
+
+
     <record id="tutorial_patient_tree_view" model="ir.ui.view">
         <field name="name">patient.patient.tree</field>
         <field name="model">patient.patient</field>

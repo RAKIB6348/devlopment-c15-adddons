@@ -4,7 +4,7 @@
 
     <menuitem id="tutorial_root_menu"
               name="Tutorials"
-              sequence="2"/>
+              sequence="0"/>
 
     <menuitem id="tutorial_patient_root"
               name="Patient Card"
