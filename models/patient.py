@@ -31,7 +31,7 @@ class HospitalPatient(models.Model):
     registration_date = fields.Date(string="Registration Date")
     age_group = fields.Selection([('major','Major'),
                                   ('minor', 'Minor'),
-                                  ],string='Age Group')
+                                  ],string='Age Group', compute='set_age_group')
 
 
     #depends on age
@@ -40,3 +40,12 @@ class HospitalPatient(models.Model):
         for rec in self:
             if rec.age == 0:
                 raise ValidationError(_("Age cannot be zero. Please enter a valid age."))
+
+    # depends on age
+    @api.depends('age')
+    def set_age_group(self):
+        for rec in self:
+            if rec.age <= 18:
+                rec.age_group = 'minor'
+            else:
+                rec.age_group = 'major'
