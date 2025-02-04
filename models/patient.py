@@ -1,5 +1,5 @@
 from odoo import api, fields, models,_
-
+from odoo.exceptions import ValidationError
 
 class HospitalPatient(models.Model):
     _name = 'patient.patient'
@@ -28,3 +28,11 @@ class HospitalPatient(models.Model):
     contact = fields.Char(string='Contact')
     image = fields.Binary(string='Image')
     note = fields.Text(string='Description')
+
+
+    #depends on age
+    @api.constrains('age')
+    def check_age(self):
+        for rec in self:
+            if rec.age == 0:
+                raise ValidationError(_("Age cannot be zero. Please enter a valid age."))
