@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="tutorial_appointment_search_view" model="ir.ui.view">
+        <field name="name">patient.appointment.search</field>
+        <field name="model">patient.appointment</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_name" string="Patient Name"/>
+                <field name="age" string="Patient Age"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="tutorial_appointment_tree_view" model="ir.ui.view">
+        <field name="name">patient.appointment.tree</field>
+        <field name="model">patient.appointment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="app_sl"/>
+                <field name="patient_name"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <field name="appointment_date"/>
+                <field name="booking_date"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="tutorial_appointment_form_view" model="ir.ui.view">
+        <field name="name">patient.appointment.form</field>
+        <field name="model">patient.appointment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="app_sl"/>
+                        </h1>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="patient_name" placeholder="PATIENT NAME"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="age"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="appointment_date"/>
+                            <field name="booking_date"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_tutorial_appointment" model="ir.actions.act_window">
+        <field name="name">APPOINTMENT</field>
+        <field name="res_model">patient.appointment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+
+                Add a new appointment
+
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="tutorial_appointment_menu"
+              name="APPOINTMENT"
+              parent="tutorial_appointment_root"
+              action="action_tutorial_appointment"
+              sequence="0"/>
+
+</odoo>

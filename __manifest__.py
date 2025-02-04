@@ -12,10 +12,12 @@
         # data
         'data/sequence.xml',
         'data/patient_ref_sequence.xml',
+        'data/appointment_sequence.xml',
 
         # views
         'views/menu.xml',
         'views/tutorial_patient.xml',
+        'views/tutorial_appointment.xml',
 
     ],
     'installable' : True,

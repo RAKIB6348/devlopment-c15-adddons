@@ -14,3 +14,12 @@ class HospitalAppointment(models.Model):
             vals['app_sl'] = self.env['ir.sequence'].next_by_code('patient.appointment') or _('New')
         res = super(HospitalAppointment, self).create(vals)
         return res
+
+    image = fields.Binary(string='Image')
+    patient_name = fields.Char(string='Patient Name')
+    age = fields.Integer(string='Age')
+    gender = fields.Selection([('male','Male'),
+                               ('female','Female'),
+                               ],string='Gender')
+    appointment_date = fields.Date(string='Appointment Date')
+    booking_date = fields.Date(string='booking_date Date')
