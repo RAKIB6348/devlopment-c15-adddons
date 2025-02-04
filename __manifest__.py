@@ -5,7 +5,11 @@
     'summary' : 'odoo15 developemnt tutorials by odoo mates',
     'sequence' : 10,
     'depends' : [],
-    'data' : [],
+    'data' : [
+        # security
+        'security/ir.model.access.csv',
+        
+    ],
     'installable' : True,
     'application' : True,
 }
