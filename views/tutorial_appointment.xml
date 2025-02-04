@@ -8,6 +8,7 @@
             <search>
                 <field name="patient_name" string="Patient Name"/>
                 <field name="age" string="Patient Age"/>
+                <field name="contact" string="Patient Contact"/>
             </search>
         </field>
     </record>
@@ -24,6 +25,8 @@
                 <field name="gender"/>
                 <field name="appointment_date"/>
                 <field name="booking_date"/>
+                <field name="contact"/>
+                <field name="ref"/>
             </tree>
         </field>
     </record>
@@ -50,10 +53,12 @@
                         <group>
                             <field name="age"/>
                             <field name="gender"/>
+                            <field name="contact"/>
                         </group>
                         <group>
                             <field name="appointment_date"/>
                             <field name="booking_date"/>
+                            <field name="ref"/>
                         </group>
                     </group>
                 </sheet>

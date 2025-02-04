@@ -3,10 +3,10 @@
     <data noupdate="1">
 
         <!-- Sequences for sale.order -->
-        <record id="seq_patient_ref" model="ir.sequence">
-            <field name="name">Patient Reference</field>
-            <field name="code">patient.ref</field>
-            <field name="prefix">HP/PAT/</field>
+        <record id="seq_appointment_ref" model="ir.sequence">
+            <field name="name">Appointment Reference</field>
+            <field name="code">appointment.ref</field>
+            <field name="prefix">HP/APP/</field>
             <field name="padding">5</field>
             <field name="company_id" eval="False"/>
         </record>

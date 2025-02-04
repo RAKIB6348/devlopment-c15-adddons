@@ -13,6 +13,7 @@
         'data/sequence.xml',
         'data/patient_ref_sequence.xml',
         'data/appointment_sequence.xml',
+        'data/appointment_ref_sequence.xml',
 
         # views
         'views/menu.xml',
