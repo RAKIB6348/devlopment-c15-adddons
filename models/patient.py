@@ -28,6 +28,10 @@ class HospitalPatient(models.Model):
     contact = fields.Char(string='Contact')
     image = fields.Binary(string='Image')
     note = fields.Text(string='Description')
+    registration_date = fields.Date(string="Registration Date")
+    age_group = fields.Selection([('major','Major'),
+                                  ('minor', 'Minor'),
+                                  ],string='Age Group')
 
 
     #depends on age

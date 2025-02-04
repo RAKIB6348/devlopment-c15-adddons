@@ -24,6 +24,7 @@
                 <field name="age"/>
                 <field name="gender"/>
                 <field name="contact"/>
+                <field name="registration_date"/>
                 <field name="ref"/>
             </tree>
         </field>
@@ -51,8 +52,10 @@
                         <group>
                             <field name="age"/>
                             <field name="gender"/>
+                            <field name="registration_date"/>
                         </group>
                         <group>
+                            <field name="age_group"/>
                             <field name="ref"/>
                             <field name="contact"/>
                         </group>
@@ -72,7 +75,7 @@
 
 
     <record id="action_tutorial_patient" model="ir.actions.act_window">
-        <field name="name">Patient</field>
+        <field name="name">PATIENT</field>
         <field name="res_model">patient.patient</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
@@ -88,7 +91,7 @@
 
 
     <menuitem id="tutorial_patient_menu"
-              name="Patient"
+              name="PATIENT"
               parent="tutorial_patient_root"
               action="action_tutorial_patient"
               sequence="0"/>

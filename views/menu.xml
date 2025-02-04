@@ -3,11 +3,11 @@
 <odoo>
 
     <menuitem id="tutorial_root_menu"
-              name="Tutorials"
+              name="TUTORIALS"
               sequence="0"/>
 
     <menuitem id="tutorial_patient_root"
-              name="Patient Card"
+              name="PATIENT CARD"
               parent="tutorial_root_menu"
               sequence="0"/>
 
