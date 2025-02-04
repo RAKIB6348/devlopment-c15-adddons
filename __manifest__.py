@@ -11,6 +11,7 @@
 
         # data
         'data/sequence.xml',
+        'data/patient_ref_sequence.xml',
 
         # views
         'views/menu.xml',

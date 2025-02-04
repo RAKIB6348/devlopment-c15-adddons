@@ -8,6 +8,7 @@
             <search>
                 <field name="name" string="Patient Name"/>
                 <field name="contact" string="Patient Contact"/>
+                <field name="ref" string="Patient Reference"/>
             </search>
         </field>
     </record>
@@ -23,6 +24,7 @@
                 <field name="age"/>
                 <field name="gender"/>
                 <field name="contact"/>
+                <field name="ref"/>
             </tree>
         </field>
     </record>
@@ -40,14 +42,19 @@
                             <field name="sl_no"/>
                         </h1>
                     </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="PATIENT NAME"/>
+                        </h1>
+                    </div>
                     <group>
-                        <group>
-                            <field name="name"/>
-                            <field name="contact"/>
-                        </group>
                         <group>
                             <field name="age"/>
                             <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="ref"/>
+                            <field name="contact"/>
                         </group>
                     </group>
                 </sheet>

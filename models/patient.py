@@ -7,11 +7,15 @@ class HospitalPatient(models.Model):
 
     sl_no = fields.Char(string='Patient ID', required=True, copy=False, readonly=True,
                     index=True, default=lambda self: _('New'))
+    ref = fields.Char(string='Reference', required=True, copy=False, readonly=True,
+                        index=True, default=lambda self: _('New'))
 
     @api.model
     def create(self, vals):
         if vals.get('sl_no', _('New')) == _('New'):
             vals['sl_no'] = self.env['ir.sequence'].next_by_code('patient.patient') or _('New')
+        if vals.get('ref', _('New')) == _('New'):
+            vals['ref'] = self.env['ir.sequence'].next_by_code('patient.ref') or _('New')
         res = super(HospitalPatient, self).create(vals)
         return res
 
