@@ -57,6 +57,9 @@
                             <field name="contact"/>
                         </group>
                     </group>
+                    <group>
+                        <field name="note"/>
+                    </group>
                 </sheet>
             </form>
         </field>

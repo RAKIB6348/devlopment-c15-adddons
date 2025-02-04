@@ -26,3 +26,4 @@ class HospitalPatient(models.Model):
                                ], string='Gender')
     contact = fields.Char(string='Contact')
     image = fields.Binary(string='Image')
+    note = fields.Text(string='Description')
