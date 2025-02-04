@@ -9,6 +9,8 @@
         # security
         'security/ir.model.access.csv',
 
+        # data
+        'data/sequence.xml',
 
         # views
         'views/menu.xml',
