@@ -15,6 +15,9 @@
         'data/appointment_sequence.xml',
         'data/appointment_ref_sequence.xml',
 
+        # wizards
+        'wizards/create_appointment_wiz.xml',
+
         # views
         'views/menu.xml',
         'views/tutorial_patient.xml',

@@ -21,4 +21,11 @@
               parent="tutorial_root_menu"
               sequence="2"/>
 
+    <menuitem id="wiz_appoinment_root"
+              name="CREATE APPOINTMENT"
+              parent="tutorial_root_menu"
+              action="create_appointment_wiz_action"
+              sequence="3"/>
+
+
 </odoo>
