@@ -4,6 +4,7 @@ from odoo import api, fields, models,_
 class HospitalPatient(models.Model):
     _name = 'patient.patient'
     _description = 'Patient Record'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     sl_no = fields.Char(string='Patient ID', required=True, copy=False, readonly=True,
                     index=True, default=lambda self: _('New'))

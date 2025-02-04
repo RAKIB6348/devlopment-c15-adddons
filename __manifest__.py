@@ -4,7 +4,7 @@
     'category' : 'Tutorials',
     'summary' : 'odoo15 developemnt tutorials by odoo mates',
     'sequence' : 10,
-    'depends' : [],
+    'depends' : ['mail'],
     'data' : [
         # security
         'security/ir.model.access.csv',
