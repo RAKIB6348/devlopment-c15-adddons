@@ -11,4 +11,9 @@
               parent="tutorial_root_menu"
               sequence="0"/>
 
+    <menuitem id="tutorial_appointment_root"
+              name="APPOINTMENT CARD"
+              parent="tutorial_root_menu"
+              sequence="1"/>
+
 </odoo>
