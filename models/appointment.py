@@ -4,6 +4,7 @@ class HospitalAppointment(models.Model):
     _name = 'patient.appointment'
     _description = 'Appointment Record'
     _inherit = ['mail.thread', 'mail.activity.mixin']
+    _rec_name = 'patient_name'
 
     app_sl = fields.Char(string='Appointment ID', required=True, copy=False, readonly=True,
                     index=True, default=lambda self: _('New'))
@@ -20,14 +21,18 @@ class HospitalAppointment(models.Model):
         return res
 
     image = fields.Binary(string='Image')
-    patient_name = fields.Char(string='Patient Name')
-    age = fields.Integer(string='Age')
+    patient_name = fields.Char(string='Patient Name', tracking=True)
+    age = fields.Integer(string='Age', tracking=True)
     gender = fields.Selection([('male','Male'),
                                ('female','Female'),
                                ],string='Gender')
-    appointment_date = fields.Date(string='Appointment Date')
-    booking_date = fields.Date(string='booking_date Date')
-    contact = fields.Char(string='Contact')
+    appointment_date = fields.Date(string='Appointment Date', tracking=True)
+    booking_date = fields.Date(string='booking_date Date', tracking=True)
+    contact = fields.Char(string='Contact', tracking=True)
+    email_id = fields.Char(string='Email', tracking=True)
+    note = fields.Text(string='Description')
+    doctor_id = fields.Many2one('patient.doctor', string='Doctor')
+
 
     # address information
     street = fields.Char('Street')

@@ -25,6 +25,7 @@
                 <field name="gender"/>
                 <field name="appointment_date"/>
                 <field name="booking_date"/>
+                <field name="doctor_id"/>
                 <field name="contact"/>
                 <field name="ref"/>
             </tree>
@@ -54,11 +55,13 @@
                             <field name="age"/>
                             <field name="gender"/>
                             <field name="contact"/>
+                            <field name="doctor_id"/>
                         </group>
                         <group>
                             <field name="appointment_date"/>
                             <field name="booking_date"/>
                             <field name="ref"/>
+                            <field name="email_id"/>
                         </group>
                     </group>
                     <notebook>
@@ -75,6 +78,9 @@
                                            options='{"no_open": True, "no_create": True}'/>
                                 </div>
                             </group>
+                        </page>
+                        <page string="Description">
+                            <field name="note"/>
                         </page>
                     </notebook>
                 </sheet>

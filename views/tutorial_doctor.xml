@@ -32,10 +32,12 @@
                         <group>
                             <field name="dob"/>
                             <field name="age"/>
+                            <field name="specialization"/>
                         </group>
                         <group>
                             <field name="gender"/>
                             <field name="contact"/>
+                            <field name="years_of_experience"/>
                         </group>
                     </group>
                 </sheet>

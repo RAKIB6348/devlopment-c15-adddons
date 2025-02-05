@@ -14,3 +14,6 @@ class HospitalDoctor(models.Model):
                                ], string='Gender')
     dob = fields.Date(string='Date of Birth')
     contact = fields.Char(string='Contact')
+    specialization = fields.Char(string="Specialization")
+    years_of_experience = fields.Integer('Years of Experience')
+
