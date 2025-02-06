@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Define the report template -->
+    <template id="patient_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <h2>Patient Report</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Patient ID</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Contact</th>
+                                <th>Registration Date</th>
+                                <th>Age Group</th>
+                                <th>Email</th>
+                                <th>Doctor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="patient">
+                                <td>
+                                    <span t-field="patient.sl_no"/>
+                                </td>
+                                <td>
+                                    <span t-field="patient.name"/>
+                                </td>
+                                <td>
+                                    <span t-field="patient.age"/>
+                                </td>
+                                <td>
+                                    <span t-field="patient.gender"/>
+                                </td>
+                                <td>
+                                    <span t-field="patient.contact"/>
+                                </td>
+                                <td>
+                                    <span t-field="patient.registration_date"/>
+                                </td>
+                                <td>
+                                    <span t-field="patient.age_group"/>
+                                </td>
+                                <td>
+                                    <span t-field="patient.email_id"/>
+                                </td>
+                                <td>
+                                    <span t-field="patient.doctor_id.name"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

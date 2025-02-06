@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Define the report action -->
+
+    <record id="action_report_patient" model="ir.actions.report">
+        <field name="name">Patient Card</field>
+        <field name="model">patient.patient</field>
+        <field name="binding_model_id" ref="model_patient_patient"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo15_tutorials.patient_report_template</field>
+        <field name="report_file">odoo15_tutorials.patient_report_template</field>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

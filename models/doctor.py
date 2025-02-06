@@ -17,3 +17,18 @@ class HospitalDoctor(models.Model):
     specialization = fields.Char(string="Specialization")
     years_of_experience = fields.Integer('Years of Experience')
 
+    note = fields.Text(string='Description')
+
+    # address information
+    street = fields.Char('Street')
+    street2 = fields.Char('Street2')
+    zip = fields.Char('Zip')
+    city = fields.Char('City')
+    state_id = fields.Many2one("res.country.state", string='State')
+    country_id = fields.Many2one('res.country', string='Country')
+
+    # Degree Information
+    degree_name = fields.Char(string="Degree Name")
+    university = fields.Char(string="University")
+    passing_year = fields.Char(string="Year of Completion")
+

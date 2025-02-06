@@ -24,6 +24,11 @@
         'views/tutorial_appointment.xml',
         'views/tutorial_doctor.xml',
 
+
+        # reports
+        'reports/report_action.xml',
+        'reports/report_template.xml',
+
     ],
     'installable' : True,
     'application' : True,
