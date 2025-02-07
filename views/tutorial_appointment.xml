@@ -28,7 +28,9 @@
                 <field name="doctor_id"/>
                 <field name="contact"/>
                 <field name="ref"/>
-                <field name="state"/>
+                <field name="state" widget="badge" decoration-success="state == 'confirmed'"
+                       decoration-info="state == 'approved'" decoration-danger="state == 'cancel'"
+                       decoration-warning="state == 'draft'"/>
             </tree>
         </field>
     </record>
