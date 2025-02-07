@@ -41,3 +41,11 @@ class HospitalAppointment(models.Model):
     city = fields.Char('City')
     state_id = fields.Many2one("res.country.state", string='State')
     country_id = fields.Many2one('res.country', string='Country')
+
+    state = fields.Selection([
+        ('draft', 'DRAFT'),
+        ('confirmed', 'CONFIRMED'),
+        ('approved', 'APPROVED'),
+        ('cancel', 'CANCELLED')], string='Status',
+        copy=False, index=True, readonly=True,
+        store=True, tracking=True,)
