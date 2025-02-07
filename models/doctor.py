@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from datetime import date
 
 
 class HospitalDoctor(models.Model):
@@ -31,4 +32,13 @@ class HospitalDoctor(models.Model):
     degree_name = fields.Char(string="Degree Name")
     university = fields.Char(string="University")
     passing_year = fields.Char(string="Year of Completion")
+
+    @api.onchange('dob')
+    def compute_age(self):
+        today = date.today()
+        for rec in self:
+            if rec.dob:
+                rec.age = today.year - rec.dob.year
+            else:
+                rec.age = 0
 

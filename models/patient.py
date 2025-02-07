@@ -34,6 +34,7 @@ class HospitalPatient(models.Model):
                                   ],string='Age Group', compute='set_age_group')
     email_id = fields.Char(string='Email')
     doctor_id = fields.Many2one('patient.doctor', string='Doctor')
+    user_id = fields.Many2one('res.users', string='PRO')
 
     # address information
     street = fields.Char('Street')

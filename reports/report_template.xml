@@ -1,55 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-
-    <!-- Define the report template -->
     <template id="patient_report_template">
         <t t-call="web.html_container">
-            <t t-call="web.internal_layout">
+            <t t-foreach="docs" t-as="patient">
                 <div class="page">
-                    <h2>Patient Report</h2>
-                    <table class="table table-bordered">
+                    <h2 style="text-align: center; margin-bottom: 20px;">Patient Report</h2>
+                    <table class="table table-bordered table-sm" style="width: 100%; border: 1px solid #ddd; border-collapse: collapse;">
                         <thead>
-                            <tr>
-                                <th>Patient ID</th>
-                                <th>Name</th>
-                                <th>Age</th>
-                                <th>Gender</th>
-                                <th>Contact</th>
-                                <th>Registration Date</th>
-                                <th>Age Group</th>
-                                <th>Email</th>
-                                <th>Doctor</th>
+                            <tr style="background-color: #f8f9fa;">
+                                <th style="padding: 8px; text-align: center; width: 30%;">Invoice</th>
+                                <th style="padding: 8px; text-align: center;">Details</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr t-foreach="docs" t-as="patient">
-                                <td>
-                                    <span t-field="patient.sl_no"/>
+                            <tr>
+                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Patient ID:</td>
+                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.sl_no"/>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Name:</td>
+                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.name"/>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Age:</td>
+                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.age"/>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Gender:</td>
+                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.gender"/>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Contact:</td>
+                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.contact"/>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Registration Date:</td>
+                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.registration_date"/>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Age Group:</td>
+                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.age_group"/>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Email:</td>
+                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.email_id"/>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Doctor:</td>
+                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.doctor_id.name"/>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Address:</td>
+                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">
+                                    <t t-esc="patient.street"/><br/>
+                                    <t t-esc="patient.street2"/><br/>
+                                    <t t-esc="patient.city"/> <t t-esc="patient.zip"/>, <t t-esc="patient.state_id.name"/>, <t t-esc="patient.country_id.name"/>
                                 </td>
-                                <td>
-                                    <span t-field="patient.name"/>
-                                </td>
-                                <td>
-                                    <span t-field="patient.age"/>
-                                </td>
-                                <td>
-                                    <span t-field="patient.gender"/>
-                                </td>
-                                <td>
-                                    <span t-field="patient.contact"/>
-                                </td>
-                                <td>
-                                    <span t-field="patient.registration_date"/>
-                                </td>
-                                <td>
-                                    <span t-field="patient.age_group"/>
-                                </td>
-                                <td>
-                                    <span t-field="patient.email_id"/>
-                                </td>
-                                <td>
-                                    <span t-field="patient.doctor_id.name"/>
-                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Notes:</td>
+                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.note"/>
                             </tr>
                         </tbody>
                     </table>

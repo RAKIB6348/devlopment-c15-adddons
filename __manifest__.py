@@ -14,6 +14,7 @@
         'data/patient_ref_sequence.xml',
         'data/appointment_sequence.xml',
         'data/appointment_ref_sequence.xml',
+        # 'data/mail_template.xml',
 
         # wizards
         'wizards/create_appointment_wiz.xml',
