@@ -49,3 +49,20 @@ class HospitalAppointment(models.Model):
         ('cancel', 'CANCELLED')], string='Status',
         copy=False, index=True, readonly=True,
         store=True, tracking=True,)
+
+    def action_draft(self):
+        for rec in self:
+            rec.state = 'draft'
+
+
+    def action_confirm(self):
+        for rec in self:
+            rec.state = 'confirmed'
+
+    def action_approve(self):
+        for rec in self:
+            rec.state = 'approved'
+
+    def action_cancel(self):
+        for rec in self:
+            rec.state = 'cancel'

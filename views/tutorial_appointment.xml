@@ -40,6 +40,14 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+                    <button name="action_draft" string="DRAFT" type="object"
+                            class="oe_highlight"/>
+                    <button name="action_confirm" string="CONFIRM" type="object"
+                            class="oe_highlight"/>
+                    <button name="action_approve" string="APPROVE" type="object"
+                            class="oe_highlight"/>
+                    <button name="action_cancel" string="CANCEL" type="object"/>
+
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,approved"/>
                 </header>
                 <sheet>
