@@ -69,3 +69,7 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     confirmed_user = fields.Many2one('res.users', string='Confirmed By')
+
+    def action_cancel(self):
+        super(SaleOrder, self).action_cancel()
+        self.confirmed_user = self.env.user.id
