@@ -60,3 +60,12 @@ class HospitalPatient(models.Model):
                 rec.age_group = 'minor'
             else:
                 rec.age_group = 'major'
+
+
+# inherit view and add field
+from odoo import models, fields, api
+
+class SaleOrder(models.Model):
+    _inherit = 'sale.order'
+
+    confirmed_user = fields.Many2one('res.users', string='Confirmed By')
