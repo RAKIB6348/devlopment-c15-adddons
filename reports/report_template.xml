@@ -56,10 +56,10 @@
                                     <t t-esc="patient.city"/> <t t-esc="patient.zip"/>, <t t-esc="patient.state_id.name"/>, <t t-esc="patient.country_id.name"/>
                                 </td>
                             </tr>
-                            <tr>
-                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Notes:</td>
-                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.note"/>
-                            </tr>
+<!--                            <tr>-->
+<!--                                <td style="padding: 8px; font-weight: bold; text-align: center; border: 1px solid #ddd;">Notes:</td>-->
+<!--                                <td style="padding: 8px; text-align: center; border: 1px solid #ddd;" t-esc="patient.note"/>-->
+<!--                            </tr>-->
                         </tbody>
                     </table>
                 </div>
