@@ -13,6 +13,9 @@ class HospitalPatient(models.Model):
 
     @api.model
     def create(self, vals):
+        if not vals.get('note'):
+            # override create method
+            vals['note'] = "New Created Patient"
         if vals.get('sl_no', _('New')) == _('New'):
             vals['sl_no'] = self.env['ir.sequence'].next_by_code('patient.patient') or _('New')
         if vals.get('ref', _('New')) == _('New'):
@@ -60,12 +63,7 @@ class HospitalPatient(models.Model):
                 rec.age_group = 'minor'
             else:
                 rec.age_group = 'major'
-                
-    # override create method
-    # @api.model
-    # def create(self,vals_field):
-    #     vals_field['note'] = "New Created Patient"
-    #     return super(HospitalPatient, self).create(vals_field)
+
     
     # overrride write method
     # def write(self, vals_to):
