@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+import datetime
 
 class CreateAppointmentWizard(models.TransientModel):
     _name = 'create.appointment.wiz'
@@ -10,6 +11,12 @@ class CreateAppointmentWizard(models.TransientModel):
                                ],string='Gender')
     appointment_date = fields.Date(string='Appointment Date')
     booking_date = fields.Date(string='Booking Date')
+
+    @api.model
+    def default_get(self, vals):
+        res = super(CreateAppointmentWizard, self).default_get(vals)
+        res['booking_date'] = datetime.date.today()
+        return res
 
     def action_create(self):
         vals = {

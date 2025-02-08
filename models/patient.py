@@ -62,10 +62,16 @@ class HospitalPatient(models.Model):
                 rec.age_group = 'major'
                 
     # override create method
-    @api.model
-    def create(self,vals):
-        vals['note'] = "New Created Patient"
-        return super(HospitalPatient, self).create(vals)
+    # @api.model
+    # def create(self,vals_field):
+    #     vals_field['note'] = "New Created Patient"
+    #     return super(HospitalPatient, self).create(vals_field)
+    
+    # overrride write method
+    # def write(self, vals_to):
+    #     if not self.age:
+    #         vals_to['contact'] = '0123456789'
+    #     return super(HospitalPatient, self).write(vals_to)
 
 
 # inherit view and add field
