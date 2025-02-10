@@ -71,3 +71,11 @@ class HospitalAppointment(models.Model):
     def action_cancel(self):
         for rec in self:
             rec.state = 'cancel'
+
+    @api.returns('self', lambda value: value.id)
+    def copy(self, default=None):
+        if default is None:
+            default = {}
+        if not default.get('patient_name'):
+            default['patient_name'] = _("%s (copy)", self.patient_name)
+        return super(HospitalAppointment, self).copy(default)
