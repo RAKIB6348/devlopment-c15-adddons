@@ -49,6 +49,11 @@ class HospitalAppointment(models.Model):
         ('cancel', 'CANCELLED')], string='Status',
         copy=False, index=True, readonly=True,
         store=True, tracking=True,)
+    priority = fields.Selection([
+        ('0', 'Normal'),
+        ('1', 'Low'),
+        ('2', 'High'),
+        ('3', 'Very High')], string="Priority",)
 
     def action_draft(self):
         for rec in self:

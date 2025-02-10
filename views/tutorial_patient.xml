@@ -51,6 +51,7 @@
                 <header>
                     <button name="%(create_appointment_wiz_action)d" type="action"
                             string="Create Appointment" class="oe_highlight"/>
+                    <button name="action_send_by_email" string="Send By Email" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
                     <field name="image" widget="image" class="oe_avatar"/>
@@ -70,7 +71,6 @@
                             <field name="gender"/>
                             <field name="registration_date"/>
                             <field name="doctor_id"/>
-                            <field name="user_id"/>
                         </group>
                         <group>
                             <field name="age_group"/>

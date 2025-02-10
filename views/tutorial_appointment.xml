@@ -48,12 +48,17 @@
                             class="oe_highlight"/>
                     <button name="action_approve" string="APPROVE" type="object"
                             class="oe_highlight"/>
-                    <button name="action_cancel" string="CANCEL" type="object"/>
+                    <button name="action_cancel" string="CANCEL" type="object" class="btn-danger"/>
 
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,approved"/>
                 </header>
                 <sheet>
                     <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="priority" widget="priority" class="mr-3"/>
+                        </h1>
+                    </div>
                     <div class="oe_title">
                         <h1>
                             <field name="app_sl"/>

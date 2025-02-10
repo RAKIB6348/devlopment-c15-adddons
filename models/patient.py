@@ -37,7 +37,6 @@ class HospitalPatient(models.Model):
                                   ],string='Age Group', compute='set_age_group')
     email_id = fields.Char(string='Email')
     doctor_id = fields.Many2one('patient.doctor', string='Doctor')
-    user_id = fields.Many2one('res.users', string='PRO')
 
     # address information
     street = fields.Char('Street')
@@ -64,7 +63,12 @@ class HospitalPatient(models.Model):
             else:
                 rec.age_group = 'major'
 
-    
+    # send email with button action
+    def action_send_by_email(self):
+        # print('Send Email')
+        template_id = self.env.ref('odoo15_tutorials.email_template_patient_registration').id
+        self.env['mail.template'].browse(template_id).send_mail(self.id, force_send=True)
+
     # overrride write method
     # def write(self, vals_to):
     #     if not self.age:
