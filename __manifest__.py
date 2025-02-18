@@ -3,8 +3,8 @@
     'version' :  '15.1.1.1.2',
     'category' : 'Tutorials',
     'summary' : 'odoo15 developemnt tutorials by odoo mates',
-    'sequence' : 10,
-    'depends' : ['mail','sale'],
+    'sequence' : 1,
+    'depends' : ['mail','sale','account'],
     'data' : [
         # security
         'security/ir.model.access.csv',
@@ -23,6 +23,7 @@
         'views/tutorial_patient.xml',
         'views/tutorial_appointment.xml',
         'views/tutorial_doctor.xml',
+        # 'views/female_patient.xml',
 
 
         # reports

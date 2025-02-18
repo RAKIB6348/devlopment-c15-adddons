@@ -24,6 +24,7 @@ class HospitalPatient(models.Model):
         return res
 
     name = fields.Char(string='Name')
+
     age = fields.Integer(string='Age')
     gender = fields.Selection([('male', 'Male'),
                                ('female', 'Female'),
@@ -46,6 +47,14 @@ class HospitalPatient(models.Model):
     state_id = fields.Many2one("res.country.state", string='State')
     country_id = fields.Many2one('res.country', string='Country')
 
+    @api.returns('self', lambda value: value.id)
+    def copy(self, default=None):
+        if default is None:
+            default = {}
+        if not default.get('name'):
+            default['name'] = _("%s (copy)", self.name)
+        return super(HospitalPatient, self).copy(default)
+
 
     #depends on age
     @api.constrains('age')
@@ -65,7 +74,7 @@ class HospitalPatient(models.Model):
 
     # send email with button action
     def action_send_by_email(self):
-        # print('Send Email')
+        print('Send Email')
         template_id = self.env.ref('odoo15_tutorials.email_template_patient_registration').id
         self.env['mail.template'].browse(template_id).send_mail(self.id, force_send=True)
 
@@ -77,7 +86,6 @@ class HospitalPatient(models.Model):
 
 
 # inherit view and add field
-from odoo import models, fields, api
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
@@ -87,3 +95,8 @@ class SaleOrder(models.Model):
     def action_cancel(self):
         super(SaleOrder, self).action_cancel()
         self.confirmed_user = self.env.user.id
+
+class AccountMove(models.Model):
+    _inherit = 'account.move'
+
+    confirmed_user = fields.Many2one('res.users', string='Confirmed By')

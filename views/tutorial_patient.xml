@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+     <!--      < basic structure-->
+    <record id="view_inherit_account_move_form" model="ir.ui.view">
+        <field name="name">account.move.inherit.from</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_reference']" position="after">
+                <field name="confirmed_user"/>
+            </xpath>
+        </field>
+    </record>
+
     <!--      < basic structure-->
     <record id="view_inherit_sale_order_form" model="ir.ui.view">
         <field name="name">sale.order.inherit.from</field>
@@ -127,8 +139,8 @@
 
     <menuitem id="tutorial_patient_menu"
               name="PATIENT"
-              parent="tutorial_patient_root"
+              parent="hospital_patient_root"
               action="action_tutorial_patient"
-              sequence="0"/>
+              sequence="1"/>
 
 </odoo>

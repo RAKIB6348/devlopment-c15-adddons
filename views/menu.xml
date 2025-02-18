@@ -6,6 +6,11 @@
               name="TUTORIALS"
               sequence="0"/>
 
+    <menuitem id="hospital_patient_root"
+              name="PATIENT DETAILS"
+              parent="tutorial_root_menu"
+              sequence="0"/>
+
     <menuitem id="tutorial_patient_root"
               name="PATIENT CARD"
               parent="tutorial_root_menu"

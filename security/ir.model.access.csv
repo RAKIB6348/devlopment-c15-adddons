@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_patient_user,patient.user,model_patient_patient,,1,1,1,1
 access_appointment_user,appointment.user,model_patient_appointment,,1,1,1,1
 access_doctor_user,doctor.user,model_patient_doctor,,1,1,1,1
+access_create_wiz,wiz.appointment,model_create_appointment_wiz,,1,1,1,1
